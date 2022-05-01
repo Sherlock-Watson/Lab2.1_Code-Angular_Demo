@@ -19,37 +19,6 @@
       [product]="product"
       (notify)="onNotify()">
     </app-product-alerts>
-
-    <form>
-        <!-- username -->
-        <mat-form-field class="textbox" appearance="outline">
-          <mat-label>Enter username</mat-label>
-          <input matInput id="username" [formControl]="usernameFormControl"
-            [errorStateMatcher]="matcher">
-          <mat-error *ngIf="usernameFormControl.hasError('required')">
-            Username is required
-          </mat-error>
-        </mat-form-field>
-
-        <!-- Force next columns to break to new line -->
-        <div class="w-100"></div>
-
-        <!-- password -->
-        <mat-form-field class="textbox" appearance="outline">
-          <mat-label>Enter password</mat-label>
-          <input matInput type="password" id="password" [formControl]="pwdFormControl"
-            [errorStateMatcher]="matcher" [type]="hide ? 'password' : 'text'">
-          <mat-error *ngIf="pwdFormControl.hasError('required')">
-            Password is required
-          </mat-error>
-          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </mat-form-field>
-        <p>
-        <a mat-button routerLink="../register">To register</a>
-        <button type="submit" (click)="onSubmit()" [disabled]="!usernameFormControl.valid || !pwdFormControl.valid">
-          Login</button>
-        </p>
-      </form>
       
 </div>
 <!-- 
